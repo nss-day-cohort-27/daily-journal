@@ -1,0 +1,48 @@
+body {
+    margin: 0 auto;
+    max-width: 80%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.entryList {
+    margin: 2em 0 0 0;
+}
+
+.entry {
+    border: 1px dashed silver;
+    padding: 0 0.8em 0.8em 0.8em;
+    margin: 0.5em 0 0 0;
+    position: relative;
+}
+
+.entry__delete {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: firebrick;
+    color: snow;
+}
+
+#journalForm {
+    margin: 0.5em 0 0 0;
+}
+
+.journalField {
+    display: flex;
+    flex-direction: column;
+}
+
+#entryContent {
+    margin: 0.5em 0 0 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.entry__content {
+
+}
+
+.entry__timestamp {
+    font-size: 0.5em;
+}
+

@@ -1,3 +1,22 @@
 {
-    "entries": []
+  "entries": [
+    {
+      "title": "Journal form",
+      "content": "Built the journal form an initial modules for saving",
+      "date": 1533737529726,
+      "id": 1
+    },
+    {
+      "title": "Loading entries",
+      "content": "Now loading entries on page load",
+      "date": 1533738331010,
+      "id": 2
+    },
+    {
+      "title": "Deleting entries",
+      "content": "Entries can now be deleted and the form re-renders                    ",
+      "date": 1533762224720,
+      "id": 3
+    }
+  ]
 }

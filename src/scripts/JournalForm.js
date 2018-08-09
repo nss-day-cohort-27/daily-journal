@@ -21,7 +21,7 @@ const FormManager = Object.create(null, {
             titleLabel.htmlFor = "entryTitle"
 
             // Title input box
-            const title = element("input", "", "")
+            const title = element("input", "", "journalInput")
             title.autofocus = true
             title.id = "entryTitle"
             title.placeholder = "Entry title"
@@ -35,7 +35,7 @@ const FormManager = Object.create(null, {
             entryLabel.htmlFor = "entryContent"
 
             // Journal entry textarea
-            const content = element("textarea", "", "")
+            const content = element("textarea", "", "journalInput")
             content.id = "entryContent"
             content.rows = 10
             content.placeholder = "What did you do today?"
@@ -44,7 +44,7 @@ const FormManager = Object.create(null, {
             entryFieldSet.appendChild(content)
 
             // Save button
-            const button = element("button", "Save Journal Entry", "")
+            const button = element("button", "Save Journal Entry", "button")
             button.id = "saveEntryButton"
             button.onclick = () => {
                 const newEntry = {

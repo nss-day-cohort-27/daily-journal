@@ -1,6 +1,6 @@
 const FormManager = require("./JournalForm")
 const DataManager = require("./DataManager")
-const entryList = require("./EntryList")
+const EntryList = require("./EntryList")
 
 
 // Handle form save button click
@@ -15,11 +15,11 @@ const deleteEntry = id => DataManager.deleteEntry(id).then(listEntries)
 
 // Function to render entry list
 const listEntries = () => DataManager.getAllEntries()
-    .then(allEntries => entryList(".entryList", allEntries, deleteEntry))
+    .then(allEntries => EntryList(".entryList", allEntries, deleteEntry))
 
 // Function to render entry form
 const displayEntryForm = () => {
-    const el = document.querySelector("#journalForm")
+    const el = document.querySelector(".journalForm")
     const form = FormManager.renderEntryForm(saveEntry)
     el.appendChild(form)
 }

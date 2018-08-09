@@ -1,48 +1,47 @@
+@import "entryForm.css";
+
+:root {
+    --base-margin: 0.5em;
+}
+
 body {
     margin: 0 auto;
     max-width: 80%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+}
+
+.button {
+    font-size: 0.6em;
 }
 
 .entryList {
     margin: 2em 0 0 0;
+    font-size: 0.8em;
 }
 
 .entry {
     border: 1px dashed silver;
     padding: 0 0.8em 0.8em 0.8em;
-    margin: 0.5em 0 0 0;
+    margin: var(--base-margin) 0 0 0;
     position: relative;
 }
 
-.entry__delete {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    background-color: firebrick;
-    color: snow;
-}
-
-#journalForm {
-    margin: 0.5em 0 0 0;
-}
-
-.journalField {
-    display: flex;
-    flex-direction: column;
-}
-
 #entryContent {
-    margin: 0.5em 0 0 0;
+    margin: var(--base-margin) 0 0 0;
     box-sizing: border-box;
     width: 100%;
 }
 
-.entry__content {
+.entry__header {
+    font-size: 0.8em;
+}
 
+.entry__content {
+    font-size: 0.8em;
 }
 
 .entry__timestamp {
-    font-size: 0.5em;
+    font-size: var(--base-margin);
 }
 

@@ -26,7 +26,7 @@ module.exports = EntryDetail = (item, deleteEntry) => {
     footer.appendChild(time)
 
     // Entry delete button
-    const deleteBtn = element("button", "Delete", "entry__delete",
+    const deleteBtn = element("button", "Delete", "button entry__delete",
                             () => deleteEntry(item.id))
 
     // Add all children to container

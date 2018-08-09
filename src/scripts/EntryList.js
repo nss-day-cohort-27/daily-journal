@@ -1,13 +1,17 @@
 const entryComponent = require("./Entry")
+const $ = require("jquery")
 
-const listElement = document.querySelector(".entryList")
+const listElement = $(".entryList")
 
 const entryList = (entries) => {
-    listElement.innerHTML = ""
+    listElement.empty()
+    let html = ""
 
     entries.map(entry => {
-        listElement.innerHTML += entryComponent(entry)
+        html += entryComponent(entry)
     })
+
+    listElement.html(html)
 }
 
 module.exports = entryList

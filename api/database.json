@@ -17,6 +17,12 @@
       "content": "Entries can now be deleted and the form re-renders                    ",
       "date": 1533762224720,
       "id": 3
+    },
+    {
+      "title": "foo",
+      "content": "foo                    ",
+      "date": 1533829563927,
+      "id": 4
     }
   ]
 }

@@ -1,8 +1,10 @@
+const $ = require("jquery")
+
 const FormManager = Object.create(null, {
     clearForm: {
         value: () => {
-            document.querySelector("#entryTitle").value = ""
-            document.querySelector("#entryContent").value = ""
+            $("#entryTitle").val("")
+            $("#entryContent").val("")
         }
     },
     renderEntryForm: {

@@ -1,13 +1,18 @@
-const entryComponent = require("./Entry")
+const EntryDetail = require("./EntryDetail")
 
-const listElement = document.querySelector(".entryList")
 
-const entryList = (entries) => {
-    listElement.innerHTML = ""
+module.exports = entryList = (target, entries, deleteEntry) => {
+    const listElement = document.querySelector(target)
+    const fragment = document.createDocumentFragment()
 
-    entries.map(entry => {
-        listElement.innerHTML += entryComponent(entry)
-    })
+    // Populate document fragment with entry components
+    entries.map(entry => fragment.appendChild(EntryDetail(entry, deleteEntry)))
+
+    // Remove all children from list container element
+    while (listElement.firstChild) {
+        listElement.removeChild(listElement.firstChild)
+    }
+
+    // Add document fragment which has all new children
+    listElement.appendChild(fragment)
 }
-
-module.exports = entryList

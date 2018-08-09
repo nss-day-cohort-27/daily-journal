@@ -2,41 +2,30 @@ const FormManager = require("./JournalForm")
 const DataManager = require("./DataManager")
 const entryList = require("./EntryList")
 
-// Render the journal entry form
-document.querySelector("#journalForm").innerHTML = FormManager.renderEntryForm()
 
-// Render the list of entries
-const listEntries = () => {
-    DataManager.getAllEntries()
-        .then(allEntries => entryList(allEntries))
-}
-
-listEntries()
+// Handle form save button click
+const saveEntry = entry => DataManager.saveJournalEntry(entry)
+    .then(() => {
+        FormManager.clearForm()
+        listEntries()
+    })
 
 // Handle delete button clicks
-document.querySelector(".entryList").addEventListener("click", evt => {
-    if (evt.target.classList.contains("entry__delete")) {
-        const id = parseInt(evt.target.id.split("--")[1])
-        DataManager.deleteEntry(id).then(listEntries)
-    }
-})
+const deleteEntry = id => DataManager.deleteEntry(id).then(listEntries)
 
-// Add an event listener for the save button
-document.querySelector("#saveEntryButton").addEventListener("click", () => {
-    // Get form field values
-    // Create object from them
-    // Add timestamp
-    const newEntry = {
-        title: document.querySelector("#entryTitle").value,
-        content: document.querySelector("#entryContent").value,
-        date: Date.now()
-    }
+// Function to render entry list
+const listEntries = () => DataManager.getAllEntries()
+    .then(allEntries => entryList(".entryList", allEntries, deleteEntry))
 
-    // POST to API
-    DataManager.saveJournalEntry(newEntry)
-        .then(() => {
-            // Clear the form fields
-            FormManager.clearForm()
-            listEntries()
-        })
-})
+// Function to render entry form
+const displayEntryForm = () => {
+    const el = document.querySelector("#journalForm")
+    const form = FormManager.renderEntryForm(saveEntry)
+    el.appendChild(form)
+}
+
+// Render the list of entries
+displayEntryForm()
+
+// Render the journal entry form
+listEntries()

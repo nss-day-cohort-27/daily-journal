@@ -12,17 +12,20 @@ const FormManager = Object.create(null, {
             return `
                 <fieldset class="journalField">
                     <label for="entryTitle">Title</label>
-                    <input required type="text" id="entryTitle" placeholder="Entry title">
+                    <input autofocus type="text" id="entryTitle"
+                           class="journalInput journalInput__title"
+                           placeholder="Entry title">
                 </fieldset>
                 <fieldset class="journalField">
                     <label for="entryContent">Deep thoughts</label>
                     <textarea id="entryContent"
                               placeholder="Your thoughts"
+                              class="journalInput journalInput__content"
                               rows="10"
                     >
                     </textarea>
                 </fieldset>
-                <button id="saveEntryButton">Save Journal Entry</button>
+                <button id="saveEntryButton" class="journalInput journalInput__save">Save Journal Entry</button>
             `
         }
     }

@@ -1,0 +1,28 @@
+.journalForm {
+    margin: 0.5em 0 0 0;
+}
+
+.journalField {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+}
+
+.journalInput {
+    font-size: var(--base-padding);
+}
+
+.journalInput__content {
+    margin: 0.5em 0 0 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.journalInput__title {
+    width: 100%;
+}
+
+.journalInput__save {
+    background-color: dodgerblue;
+    color: white;
+}

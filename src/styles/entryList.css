@@ -1,0 +1,37 @@
+:root {
+    --base-padding: 0.8em;
+    --top-right-positioning: 5px;
+}
+
+.entryList {
+    margin: 2em 0 0 0;
+    font-size: var(--base-padding);
+}
+
+.entry {
+    border: 1px solid black;
+    padding: 0 var(--base-padding) var(--base-padding) var(--base-padding);
+    margin: 0.5em 0 0 0;
+    position: relative;
+}
+
+.entry__header {
+    font-size: var(--base-padding);
+}
+
+.entry__content {
+    font-size: var(--base-padding);
+}
+
+.entry__timestamp {
+    font-size: 0.5em;
+}
+
+
+.entry__delete {
+    position: absolute;
+    top: var(--top-right-positioning);
+    right: var(--top-right-positioning);
+    background-color: firebrick;
+    color: snow;
+}
